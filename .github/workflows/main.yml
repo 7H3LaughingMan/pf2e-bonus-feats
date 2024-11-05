@@ -28,7 +28,7 @@ jobs:
 
       - name: Extract Version
         id: get_version
-        users: battila7/get-version-action@v2
+        uses: battila7/get-version-action@v2
 
       - name: Modify Module Manifest
         uses: microsoft/variable-substitution@v1
