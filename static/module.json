@@ -1,0 +1,51 @@
+{
+    "id": "pf2e-bonus-feats",
+    "title": "PF2e Bonus Feats",
+    "version": "6.0.0",
+    "description": "",
+    "authors": [
+        {
+            "name": "7H3LaughingMan",
+            "discord": "7h3laughingman",
+            "url": "https://github.com/7H3LaughingMan"
+        }
+    ],
+    "esmodules": ["pf2e-bonus-feats.js"],
+    "compatibility": {
+        "minimum": "12.331",
+        "verified": "12.331",
+        "maximum": "12"
+    },
+    "packs": [
+        {
+            "name": "bonus-feats",
+            "label": "Bonus Feats",
+            "path": "packs/bonus-feats",
+            "type": "Item",
+            "system": "pf2e",
+            "ownership": {
+                "PLAYER": "OBSERVER",
+                "ASSISTANT": "OWNER"
+            }
+        }
+    ],
+    "relationships": {
+        "systems": [
+            {
+                "id": "pf2e",
+                "type": "system",
+                "mainfest": "https://github.com/foundryvtt/pf2e/releases/latest/download/system.json",
+                "compatibility": {
+                    "minimum": "6.4.1"
+                }
+            }
+        ]
+    },
+    "url": "https://github.com/7H3LaughingMan/pf2e-automaton",
+    "bugs": "https://github.com/7H3LaughingMan/pf2e-automaton/issues",
+    "readme": "https://github.com/7H3LaughingMan/pf2e-automaton/blob/main/README.md",
+    "license": "https://github.com/7H3LaughingMan/pf2e-automatone/blob/main/LICENSE",
+    "changelog": "https://github.com/7H3LaughingMan/pf2e-automaton/blob/main/CHANGELOG.md",
+    "manifest": "https://github.com/7H3LaughingMan/pf2e-automaton/raw/main/module.json",
+    "download": "https://github.com/7H3LaughingMan/pf2e-automaton/archive/refs/heads/main.zip"
+}

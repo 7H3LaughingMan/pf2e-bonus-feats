@@ -1,0 +1,32 @@
+{
+    "name": "pf2e-bonus-feats",
+    "scripts": {
+        "build": "npm run clean && npm run build:packs && vite build",
+        "build:packs": "tsx ./build/build-packs.ts",
+        "clean": "tsx ./build/clean.ts",
+        "changelog": "changelog --format markdownlint --create --release",
+        "link": "tsx ./build/link-foundry.ts",
+        "fvtt": "fvtt"
+    },
+    "author": "7H3LaughingMan",
+    "license": "MIT",
+    "type": "module",
+    "devDependencies": {
+        "@foundryvtt/foundryvtt-cli": "^1.0.3",
+        "@types/jquery": "^3.5.32",
+        "@types/node": "^22.8.6",
+        "@types/prompts": "^2.4.9",
+        "keep-a-changelog": "^2.5.3",
+        "prettier": "^3.3.3",
+        "prompts": "^2.4.2",
+        "tsx": "^4.19.2",
+        "typescript": "^5.3.3",
+        "vite": "^5.4.9",
+        "vite-plugin-checker": "^0.8.0",
+        "vite-plugin-static-copy": "^2.0.0",
+        "vite-tsconfig-paths": "^5.0.1"
+    },
+    "dependencies": {
+        "foundry-pf2e": "github:7H3LaughingMan/foundry-pf2e"
+    }
+}
