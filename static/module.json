@@ -42,10 +42,6 @@
         ]
     },
     "url": "https://github.com/7H3LaughingMan/pf2e-automaton",
-    "bugs": "https://github.com/7H3LaughingMan/pf2e-automaton/issues",
-    "readme": "https://github.com/7H3LaughingMan/pf2e-automaton/blob/main/README.md",
-    "license": "https://github.com/7H3LaughingMan/pf2e-automatone/blob/main/LICENSE",
-    "changelog": "https://github.com/7H3LaughingMan/pf2e-automaton/blob/main/CHANGELOG.md",
     "manifest": "https://github.com/7H3LaughingMan/pf2e-automaton/raw/main/module.json",
     "download": "https://github.com/7H3LaughingMan/pf2e-automaton/archive/refs/heads/main.zip"
 }

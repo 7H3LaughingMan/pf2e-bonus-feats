@@ -7,9 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
-## [0.1.0] - 2024-10-31
+## [6.0.0] - 2024-11-05
 
 First version
 
-[Unreleased]: https://github.com/7H3LaughingMan/pf2e-bonus-feats/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/7H3LaughingMan/pf2e-bonus-feats/releases/tag/v0.1.0
+[Unreleased]: https://github.com/7H3LaughingMan/pf2e-bonus-feats/compare/v6.0.0...HEAD
+[6.0.0]: https://github.com/7H3LaughingMan/pf2e-bonus-feats/releases/tag/v6.0.0
