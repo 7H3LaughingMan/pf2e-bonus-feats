@@ -26,50 +26,16 @@ Hooks.on("ready", async () => {
 
 Hooks.on(
     "renderCharacterSheetPF2e",
-    async (application: CharacterSheetPF2e<CharacterPF2e>, html: JQuery, _data: CharacterSheetData) => {
-        const actor = application.actor;
+    (application: CharacterSheetPF2e<CharacterPF2e>, _html: JQuery, _data: CharacterSheetData) => {
+        const classFeats = application.actor.feats.get("class");
+        const bonusClassFeats = application.actor.feats.get("bonusClassFeats");
 
-        const classTrait = ((): string | null => {
-            const slug = actor.class ? (actor.class.slug ?? game.pf2e.system.sluggify(actor.class.name)) : null;
-            return slug && slug in CONFIG.PF2E.featTraits ? slug : null;
-        })();
+        if (classFeats && bonusClassFeats) {
+            bonusClassFeats.filter.traits = [];
 
-        const classFeatFilter = !classTrait
-            ? []
-            : actor.level < 2
-              ? [`traits-${classTrait}`]
-              : actor.itemTypes.feat.some((f) => f.traits.has("dedication"))
-                ? [`traits-${classTrait}`, "traits-archetype"]
-                : [`traits-${classTrait}`, "traits-dedication"];
-
-        if (classFeatFilter.length === 0) {
-            return;
-        }
-
-        const featsTab = $(html).find(".tab.feats");
-        const bonusClassFeats = $(featsTab).find("[data-group-id='bonusClassFeats']");
-
-        const levels = [1, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20];
-        const featSlots = levels.map((level) => `bonusClassFeats-${level}`);
-
-        $(bonusClassFeats)
-            .find("button[data-type='feat']")
-            .each(function () {
-                const currentFilter = $(this).attr("data-filter") || "";
-                $(this).attr("data-filter", currentFilter + "," + classFeatFilter.join(","));
-            });
-
-        featSlots.forEach((featSlot) => {
-            const slotItem = $(bonusClassFeats).find(`[data-slot-id='${featSlot}']`);
-
-            if (slotItem.length > 0) {
-                const itemControls = slotItem.find("div.item-controls");
-
-                itemControls.find("a").each(function () {
-                    const currentFilter = $(this).attr("data-filter") || "";
-                    $(this).attr("data-filter", currentFilter + "," + classFeatFilter.join(","));
-                });
+            for (const trait of classFeats.filter.traits ?? []) {
+                bonusClassFeats.filter.traits.push(trait);
             }
-        });
+        }
     },
 );

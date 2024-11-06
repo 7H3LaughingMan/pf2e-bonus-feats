@@ -1,8 +1,9 @@
 {
     "name": "pf2e-bonus-feats",
     "scripts": {
-        "build": "npm run clean && npm run build:packs && vite build",
+        "build": "npm run clean && npm run build:packs && npm run build:vite",
         "build:packs": "tsx ./build/build-packs.ts",
+        "build:vite": "vite build",
         "clean": "tsx ./build/clean.ts",
         "changelog": "changelog --format markdownlint --create --release",
         "link": "tsx ./build/link-foundry.ts",
