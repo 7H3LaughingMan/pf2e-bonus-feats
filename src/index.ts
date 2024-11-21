@@ -1,4 +1,4 @@
-import { CharacterPF2e, CharacterSheetData, CharacterSheetPF2e } from "foundry-pf2e";
+import { AbilityItemPF2e, CharacterPF2e, CharacterSheetData, CharacterSheetPF2e, FeatPF2e, ItemPF2e } from "foundry-pf2e";
 
 Hooks.on("ready", async () => {
     const campaignFeatSections = game.settings.get("pf2e", "campaignFeatSections");
@@ -39,3 +39,11 @@ Hooks.on(
         }
     },
 );
+
+function isValidStance(stance: ItemPF2e): stance is FeatPF2e | AbilityItemPF2e {
+    return (
+        stance.isOfType("feat", "action") &&
+        stance.system.traits.value.includes("stance") &&
+        !!stance.system.selfEffect?.uuid
+    );
+}
